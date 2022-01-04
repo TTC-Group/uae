@@ -13,6 +13,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(
+            height: 80,
+          ),
           ElevatedButton(
               onPressed: (){
                 Navigator.push(context,
