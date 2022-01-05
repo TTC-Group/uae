@@ -170,7 +170,7 @@ class _LangTranslatorState extends State<LangTranslator> {
                                    size: 30,
                                    color: isSpeaking?
                                    Colors.grey:
-                                   _allColor.appColor,
+                                   _allColor.appButtonColor,
                                  ),
                                 onPressed: () {
                                   isSpeaking?stop():speak();
