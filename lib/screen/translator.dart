@@ -104,8 +104,9 @@ class _LangTranslatorState extends State<LangTranslator> {
   Widget build(BuildContext context) {
     return  Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: _allColor.appColor,
-          title: const Text('Home'),
+          title: const Text('Translator'),
         ),
 
         body: Padding(
@@ -125,7 +126,10 @@ class _LangTranslatorState extends State<LangTranslator> {
                           padding: const EdgeInsets.only(right: 45.0,top: 10),
                           child: Text(
                             lastWords,
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 20
+                            ),
                           ),
                         ),
                         // Positioned(
@@ -155,6 +159,9 @@ class _LangTranslatorState extends State<LangTranslator> {
                             child: Text(
                             lastWords2,
                             textAlign: TextAlign.right,
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
                        ),
                           ),
                         ),
