@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uae/helper/menu_widget.dart';
 import 'package:uae/screen/translator.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:uae/screen/word_meaning.dart';
 import 'package:uae/utills/allColors.dart';
 
 class HomePage extends StatefulWidget {
@@ -154,7 +155,12 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           width: width,
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => WordMeaning()),
+                              );
+                            },
                             child: Padding(
                               padding: const EdgeInsets.all(0.0),
                               child: Container(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 class AllColors{
 Color appColor=Colors.black;
 //Color appcontColor=Colors.teal;
-Color appcontColor=Color(0xff2d7b31);
+Color appcontColor=Colors.indigo;
 Color apptext=Colors.white;
 Color appbarColor=Color(0xff4caf50);
 //Color appbarColor=Colors.teal;
