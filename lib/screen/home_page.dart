@@ -33,6 +33,13 @@ List<String> btnName = [
   "মুদি দোকানে কথোপকথন"
 ];
 
+List<String> wordBtnList = [
+  "songkha, din mash",
+  "Shorbonam",
+  "khabar o fol mul",
+  "ranna ghorer jinishpotro",
+  "sorirer ongo protongo"
+];
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -164,7 +171,9 @@ class _HomePageState extends State<HomePage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context)
-                                    => WordScreen())):
+                                    => WordScreen(
+                                      btnName: wordBtnList,
+                                    ))):
                                 {
                                   if(i == 1)
                                     {

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 class WordScreen extends StatefulWidget {
-  const WordScreen({Key? key}) : super(key: key);
+  List<String> btnName;
+   WordScreen({Key? key,
+  required this.btnName
+  }) : super(key: key);
 
   @override
   _WordScreenState createState() => _WordScreenState();
