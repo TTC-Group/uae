@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:uae/app_all_data/necessary_sentense.dart';
 import 'package:uae/helper/menu_widget.dart';
+import 'package:uae/screen/sentence_screen.dart';
 import 'package:uae/screen/translator.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:uae/screen/word_meaning.dart';
+import 'package:uae/screen/word_screen.dart';
 import 'package:uae/utills/allColors.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +13,8 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
+NecessarySentense _necessary
+     =NecessarySentense();
 GlobalKey<SliderMenuContainerState> _key =
     new GlobalKey<SliderMenuContainerState>();
 List<IconData> iconList = [
@@ -156,10 +159,28 @@ class _HomePageState extends State<HomePage> {
                           width: width,
                           child: InkWell(
                             onTap: () {
+                              (i == 0)?
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => WordMeaning()),
-                              );
+                                MaterialPageRoute(
+                                    builder: (context)
+                                    => WordScreen())):
+                                {
+                                  if(i == 1)
+                                    {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context)
+                                            => SentenceScreen(
+                                              tempListBn: _necessary.bnNecessarySentense,
+                                              tempListAr: _necessary.arNecessarySentense,
+                                              tempListPr: _necessary.prNecessarySentense,
+                                            )),
+                                      )
+                                    }
+                                  ,
+                                };
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(0.0),
