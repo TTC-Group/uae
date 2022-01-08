@@ -22,7 +22,7 @@ List<IconData> iconList = [
   Icons.fireplace_sharp
 ];
 List<String> btnName = [
-  "শব্দার্থ",
+  "প্রয়োজনীয় শব্দার্থ",
   "প্রয়োজনীয় বাক্য",
   "এয়ারপোর্টে কথোপকথন",
   "হাসপাতালে কথোপকথন",
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         sliderMain: Container(
-          color: Colors.grey,
+          color: Colors.black,
           child: Column(
             children: [
               Container(
@@ -121,6 +121,7 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(20)),
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
+
                                 primary: allColors.appButtonColor,
                             ),
 
@@ -131,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => LangTranslator()));
                             },
                             child: Text(
-                              "Translator",
+                              "অনুবাদ করুন",
                               style: TextStyle(color: allColors.apptext),
                             )),
                       ),
@@ -141,10 +142,10 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: GridView.count(
-                  childAspectRatio: 2.7,
+                  childAspectRatio: 2.1,
                   crossAxisCount: 2,
-                  mainAxisSpacing: 30,
-                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 20,
                   children: [
                     for (int i = 0; i < btnName.length; i++)
                       Padding(
@@ -161,18 +162,18 @@ class _HomePageState extends State<HomePage> {
                                 width: width,
                                 decoration: BoxDecoration(
                                     color: allColors.appButtonColor,
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(5),
                                     boxShadow: [
                                       BoxShadow(
-                                        offset: Offset(5.0, 10.0),
-                                        color: allColors.appColor,
-                                        blurRadius: 30.0,
+                                        offset: Offset(2.0, 5.0),
+                                        color: Colors.deepOrange.shade100,
+                                        blurRadius: 10.0,
                                       )
                                     ]),
                                 child: Stack(
                                   children: [
                                     Container(
-                                      height: 50,
+                                      height: 90,
                                       width: 105,
                                       decoration: BoxDecoration(
                                           gradient: LinearGradient(
@@ -189,11 +190,14 @@ class _HomePageState extends State<HomePage> {
                                                 Radius.circular(width * 0.3),
                                             bottomRight: Radius.circular(300),
                                           )),
-                                      child: Center(
-                                        child: Text(
-                                          btnName[i],
-                                          style: TextStyle(
-                                              color: allColors.apptext),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(12.0),
+                                        child: Center(
+                                          child: Text(
+                                            btnName[i],
+                                            style: TextStyle(
+                                                color: allColors.apptext),
+                                          ),
                                         ),
                                       ),
                                     ),
