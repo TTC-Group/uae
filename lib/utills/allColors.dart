@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 class AllColors{
 Color appColor=Colors.black;
-Color appButtonColor=Colors.deepOrange;
+Color appcontColor=Color(0xffff0000);
+Color apptext=Colors.black;
+Color appbarColor=Color(0xffff0000);
+Color appButtonColor=Colors.blackbjk;
 Color detailTextColor=Colors.black;
 Color normalTextColor=Colors.black;
 Color drawerColor=Colors.orangeAccent;

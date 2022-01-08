@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uae/helper/menu_widget.dart';
 import 'package:uae/screen/translator.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:uae/utills/allColors.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -10,6 +11,13 @@ class HomePage extends StatefulWidget {
 }
 GlobalKey<SliderMenuContainerState> _key =
 new GlobalKey<SliderMenuContainerState>();
+List<String> btnName=[
+  "button 1",
+  "button 2",
+  "button 3",
+  "button 4",
+  "button 5"
+];
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -18,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body:
       SliderMenuContainer(
-          appBarColor: allColors.appColor,
+          appBarColor: allColors.appcontColor,
           key: _key,
           sliderMenuCloseSize: 0,
           title: Text("HOME",style: TextStyle(color: Colors.white,
@@ -84,25 +92,137 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           sliderMain:
-        Column(
-          children: [
-            SizedBox(
-              height: 80,
+        Container(
+          color: Colors.grey,
+          child: Column(
+              children: [
+                Container(
+                  height: height*0.15,
+                  width: width,
+       child: Stack(
+             children: [
+               Container(
+                   decoration: BoxDecoration(
+                      color: allColors.appcontColor,
+
+                       borderRadius: BorderRadius.only(
+                         bottomLeft: Radius.circular(36),
+                         bottomRight: Radius.circular(36),
+
+
+
+                       )
+                   )
+               ),
+               Positioned(
+                 bottom: 0,
+                 left: 0,
+                 right: 0,
+                 child: Container(
+
+                   margin: EdgeInsets.symmetric(horizontal: 70),
+                   decoration: BoxDecoration(
+
+                     borderRadius: BorderRadius.circular(20)
+                   ),
+
+                 child:  ElevatedButton(
+                     style: ElevatedButton.styleFrom(primary: allColors.appButtonColor
+                     ),
+                     onPressed: (){
+                       Navigator.push(context,
+                           MaterialPageRoute
+                             (builder: (context)=>
+                               LangTranslator()));
+                     },
+                     child: Text("Translator",style: TextStyle(color:allColors.apptext),)) ,
+                 ),
+               )
+
+             ],
+       ),
+                ),
+                Expanded(
+                  child: GridView.count(
+                    childAspectRatio: 2.7,
+                      crossAxisCount: 2,
+                    mainAxisSpacing: 30,
+                    crossAxisSpacing: 30,
+                    children: [
+                      for(int i=0; i<btnName.length;i++)
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 50,
+                            width: 150,
+                            child: InkWell(
+                              onTap: (){
+
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(0.0),
+                                child: Container(
+                                  height: 50,
+                                  width: 150,
+                                  decoration: BoxDecoration(
+                                      color: allColors.appButtonColor,
+                                      borderRadius: BorderRadius.circular(20),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(5.0,10.0),
+                                          color: allColors.appColor,
+                                          blurRadius: 30.0,
+                                        )
+                                      ]
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      Container(
+                                        height: 50,
+                                        width: 105,
+                                        decoration: BoxDecoration(
+                                            gradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+
+                                              colors: [
+                                                allColors.appcontColor,
+                                                allColors.appButtonColor
+                                              ],
+                                            ),
+                                            borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(width*0.1),
+                                              bottomLeft: Radius.circular(width*0.3),
+                                              bottomRight: Radius.circular(300),
+
+                                            )
+                                        ),
+                                        child: Center(child: Text(btnName[i])),
+
+                                      ),
+                                      Positioned(
+                                          top: 5,
+                                          right: 5,
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Icon(
+                                              Icons.home,color: allColors.appcontColor,),
+                                          )
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
+                )
+                ],
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: allColors.appButtonColor
-              ),
-                onPressed: (){
-                  Navigator.push(context,
-                      MaterialPageRoute
-                        (builder: (context)=>
-                      LangTranslator()));
-                },
-                child: Text("Translator"))
-          ],
         ),
-      ),
+        ),
+
 
     );
   }
