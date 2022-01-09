@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:uae/app_all_data/airport_conversation.dart';
+import 'package:uae/app_all_data/food_and_fruits.dart';
+import 'package:uae/app_all_data/hospital_conversation.dart';
 import 'package:uae/app_all_data/necessary_sentense.dart';
 import 'package:uae/helper/menu_widget.dart';
 import 'package:uae/screen/sentence_screen.dart';
@@ -15,6 +18,16 @@ class HomePage extends StatefulWidget {
 }
 NecessarySentense _necessary
      =NecessarySentense();
+
+AirportConversation _airportConversation
+      =AirportConversation();
+
+HospitalConversation _hospitalConversation
+          =HospitalConversation();
+
+FoodAndFruits _foodAndFruits
+         =FoodAndFruits();
+
 GlobalKey<SliderMenuContainerState> _key =
     new GlobalKey<SliderMenuContainerState>();
 List<IconData> iconList = [
@@ -182,12 +195,55 @@ class _HomePageState extends State<HomePage> {
                                         MaterialPageRoute(
                                             builder: (context)
                                             => SentenceScreen(
+                                              title: btnName[1],
+                                              tempListBn: _airportConversation.bnAirportConversation,
+                                              tempListAr: _airportConversation.arAirportConversation,
+                                              tempListPr: _airportConversation.prAirportConversation,
+                                            )),
+                                      )
+                                    }
+                                  else if(i == 2)
+                                    {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context)
+                                            => SentenceScreen(
+                                              title: btnName[2],
                                               tempListBn: _necessary.bnNecessarySentense,
                                               tempListAr: _necessary.arNecessarySentense,
                                               tempListPr: _necessary.prNecessarySentense,
                                             )),
                                       )
                                     }
+                                  else if(i == 3)
+                                      {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context)
+                                              => SentenceScreen(
+                                                title: btnName[3],
+                                                tempListBn: _hospitalConversation.bnListHos,
+                                                tempListAr: _hospitalConversation.arListHos,
+                                                tempListPr: _hospitalConversation.PrListHos,
+                                              )),
+                                        )
+                                      }
+                                    else if(i == 4)
+                                        {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context)
+                                                => SentenceScreen(
+                                                  title: btnName[4],
+                                                  tempListBn: _foodAndFruits.bnFoodAndFruits,
+                                                  tempListAr: _foodAndFruits.arFoodAndFruits,
+                                                  tempListPr: _foodAndFruits.prFoodAndFruits,
+                                                )),
+                                          )
+                                        }
                                   ,
                                 };
                             },
