@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uae/app_all_data/airport_conversation.dart';
+import 'package:uae/app_all_data/basar_jinispotro_posak.dart';
 import 'package:uae/app_all_data/food_and_fruits.dart';
 import 'package:uae/app_all_data/hospital_conversation.dart';
 import 'package:uae/app_all_data/necessary_sentense.dart';
@@ -27,7 +28,8 @@ HospitalConversation _hospitalConversation
 
 FoodAndFruits _foodAndFruits
          =FoodAndFruits();
-
+Basarjinis_potro_posak _basarjinis_potro_posak
+      = Basarjinis_potro_posak();
 GlobalKey<SliderMenuContainerState> _key =
     new GlobalKey<SliderMenuContainerState>();
 List<IconData> iconList = [
@@ -238,9 +240,9 @@ class _HomePageState extends State<HomePage> {
                                                 builder: (context)
                                                 => SentenceScreen(
                                                   title: btnName[4],
-                                                  tempListBn: _foodAndFruits.bnFoodAndFruits,
-                                                  tempListAr: _foodAndFruits.arFoodAndFruits,
-                                                  tempListPr: _foodAndFruits.prFoodAndFruits,
+                                                  tempListBn: _basarjinis_potro_posak.bnlistBasarjinisPotro,
+                                                  tempListAr: _basarjinis_potro_posak.arListBasarJinisPotro,
+                                                  tempListPr: _basarjinis_potro_posak.prlistBasarJinisPotro,
                                                 )),
                                           )
                                         }
