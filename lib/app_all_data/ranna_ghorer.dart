@@ -57,7 +57,7 @@ class RannaGhor{
         'المقلاة',
         'صنبور المياه',
         'شغل',
-        'اطفيء'
+        'اطفيء',
   ];
   List<String> prlistRannaGhor=[
   'আতবাক',
