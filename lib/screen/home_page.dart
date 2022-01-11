@@ -5,6 +5,7 @@ import 'package:uae/app_all_data/food_and_fruits.dart';
 import 'package:uae/app_all_data/hospital_conversation.dart';
 import 'package:uae/app_all_data/necessary_sentense.dart';
 import 'package:uae/helper/menu_widget.dart';
+import 'package:uae/screen/about_us.dart';
 import 'package:uae/screen/sentence_screen.dart';
 import 'package:uae/screen/translator.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -112,11 +113,11 @@ class _HomePageState extends State<HomePage> {
                 //       (context) => Quiz()),
                 // );
               } else if (title == "ABOUT US") {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder:
-                //       (context) => AboutUs()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:
+                      (context) => AboutUs()),
+                );
               }
             });
           },
