@@ -5,6 +5,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
+import 'package:uae/helper/menu_widget.dart';
 import 'package:uae/utills/allColors.dart';
 import 'package:translator/translator.dart';
 
@@ -105,7 +106,7 @@ class _LangTranslatorState extends State<LangTranslator> {
     return  Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: _allColor.appColor,
+          backgroundColor: allColors.appcontColor,
           title: const Text('Translator'),
         ),
 

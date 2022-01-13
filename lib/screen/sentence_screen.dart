@@ -21,6 +21,9 @@ class SentenceScreen extends StatefulWidget {
 class _SentenceScreenState extends State<SentenceScreen> {
   @override
   Widget build(BuildContext context) {
+    print("Suha ar"+widget.tempListAr.length.toString());
+    print("Suha bn"+widget.tempListBn.length.toString());
+    print("Suha pr"+widget.tempListPr.length.toString());
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -32,6 +35,7 @@ class _SentenceScreenState extends State<SentenceScreen> {
             child: ListView.builder(
               itemCount: widget.tempListBn.length,
               itemBuilder: (context, index) {
+
                 return  Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(

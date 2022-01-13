@@ -1,5 +1,5 @@
 class RannaGhor{
-  List<String> bnlistRannaGhor=[
+  List<String> bnList=[
   'প্লেট গুলাে',
   'প্লেট ধােয়ার মেশিন',
   'মাইক্রোওয়েভ ওভেন',
@@ -29,7 +29,7 @@ class RannaGhor{
   'সুইচ অন করা',
   'সুইচ অফ করা'
   ];
-  List<String>arListRannaGhor=[
+  List<String>arList=[
     'بليت جولاي',
     'غسالة الأطباق',
     'فرن المايكرويف',
@@ -59,7 +59,7 @@ class RannaGhor{
         'شغل',
         'اطفيء',
   ];
-  List<String> prlistRannaGhor=[
+  List<String> prList=[
   'আতবাক',
   'মিগছালাতুল আতবাক',
   'মাইক্রোওয়েভ/ফুরন',

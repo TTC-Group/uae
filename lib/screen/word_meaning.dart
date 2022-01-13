@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uae/helper/menu_widget.dart';
 
 class WordMeaning extends StatelessWidget {
   String title;
@@ -18,6 +19,7 @@ class WordMeaning extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: allColors.appcontColor,
         title: Text(title),
         centerTitle: true,
       ),
@@ -51,11 +53,11 @@ class WordMeaning extends StatelessWidget {
                     children: [
                       SizedBox(
                           width: MediaQuery.of(context).size.width / 3.3,
-                          child: Text(bnWord[index])),
+                          child: Text(bnWord[index]??"")),
                       SizedBox(
                           width: MediaQuery.of(context).size.width / 3.3,
-                          child: Text(arWord[index])),
-                      Text(prWord[index]),
+                          child: Text(arWord[index]??"")),
+                      Text(prWord[index]??""),
                     ],
                   ),
                 );

@@ -21,18 +21,14 @@ class MenuWidget extends StatelessWidget {
             height: _heightOnly*0.045,
           ),
           CircleAvatar(
-            radius: 65,
-            backgroundColor: Colors.black,
-            child: CircleAvatar(
-              backgroundColor:
-              allColors.normalTextColor,
-              radius: 60,
-              // backgroundImage: AssetImage
-              //   ('assets/image/ict4.jpg'),
-            ),
+            backgroundColor:
+            allColors.normalTextColor,
+            radius: 100,
+            backgroundImage: AssetImage
+              ('assets/cover1.jpg',),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           // Text(
           //   'Creator',
@@ -58,8 +54,8 @@ class MenuWidget extends StatelessWidget {
             height: 20,
           ),
           sliderItem('HOME', Icons.home),
-          sliderItem("TRANSLATOR", Icons.list_alt),
-          sliderItem('QUIZ', Icons.local_hospital),
+          sliderItem("TRANSLATOR", Icons.chat_bubble),
+          sliderItem('QUIZ', Icons.list_alt_outlined),
           sliderItem('WORDS', Icons.home_outlined),
           sliderItem('ABOUT US', Icons.account_box_outlined)
         ],

@@ -1,5 +1,5 @@
 class Pronoun{
-  List <String> bnPronounList = [
+  List <String> bnList = [
     "আমি",
     "আমরা ",
     "তুমি, আপনি (পুরুষ)",
@@ -50,7 +50,7 @@ class Pronoun{
     "আমরা পারি ..."
 
   ];
-  List <String> arPronounList = [
+  List <String> arList = [
   "أنا ",
   "نحن",
   "أنت ، أنت (ذكر)" ,
@@ -100,7 +100,7 @@ class Pronoun{
     "يستطيعون ...",
     "نستطيع ..."
   ];
-  List <String> prPronounList = [
+  List <String> prList = [
     'আনা',
     'নাহনু',
     'আনতা',

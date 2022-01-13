@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uae/app_all_data/airport_conversation.dart';
 import 'package:uae/app_all_data/basar_jinispotro_posak.dart';
@@ -6,6 +7,7 @@ import 'package:uae/app_all_data/hospital_conversation.dart';
 import 'package:uae/app_all_data/necessary_sentense.dart';
 import 'package:uae/helper/menu_widget.dart';
 import 'package:uae/screen/about_us.dart';
+import 'package:uae/screen/quiz_page.dart';
 import 'package:uae/screen/sentence_screen.dart';
 import 'package:uae/screen/translator.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -34,19 +36,20 @@ Basarjinis_potro_posak _basarjinis_potro_posak
 GlobalKey<SliderMenuContainerState> _key =
     new GlobalKey<SliderMenuContainerState>();
 List<IconData> iconList = [
-  Icons.airplanemode_active_rounded,
-  Icons.home,
-  Icons.local_hospital,
+  Icons.book_outlined,
   Icons.my_library_books,
-  Icons.perm_contact_calendar,
-  Icons.fireplace_sharp
+  Icons.airplanemode_on,
+  Icons.local_hospital,
+  Icons.shopping_bag_rounded,
+  Icons.list_alt
 ];
 List<String> btnName = [
   "প্রয়োজনীয় শব্দার্থ",
   "প্রয়োজনীয় বাক্য",
   "এয়ারপোর্টে কথোপকথন",
   "হাসপাতালে কথোপকথন",
-  "মুদি দোকানে কথোপকথন"
+  "মুদি দোকানে কথোপকথন",
+  "কুইজ"
 ];
 
 List<String> wordBtnList = [
@@ -93,25 +96,27 @@ class _HomePageState extends State<HomePage> {
                 //   MaterialPageRoute(builder:
                 //       (context) => MyHomePage()),
                 // );
-              } else if (title == "Doctor's List") {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder:
-                //       (context) =>
-                //       DoctorTypeShow()),
-                // );
-              } else if (title == "All Clinics") {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder:
-                //       (context) => Employees()),
-                // );
-              } else if (title == "All Diagnostics") {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder:
-                //       (context) => Quiz()),
-                // );
+              } else if (title == "TRANSLATOR") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:
+                      (context) =>
+                          LangTranslator()),
+                );
+              } else if (title == "QUIZ") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:
+                      (context) => QuizPage()),
+                );
+              } else if (title == "WORDS") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:
+                      (context) => WordScreen(
+                        btnName: wordBtnList,
+                      )),
+                );
               } else if (title == "ABOUT US") {
                 Navigator.push(
                   context,
@@ -138,33 +143,53 @@ class _HomePageState extends State<HomePage> {
                               bottomLeft: Radius.circular(36),
                               bottomRight: Radius.circular(36),
                             ))),
-                    Positioned(
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 70),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20)),
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
 
-                                primary: allColors.appButtonColor,
-                            ),
-
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LangTranslator()));
-                            },
-                            child: Text(
-                              "অনুবাদ করুন",
-                              style: TextStyle(color: allColors.apptext),
-                            )),
-                      ),
-                    )
                   ],
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                width: 250,
+                //margin: EdgeInsets.symmetric(horizontal: 70),
+                decoration: BoxDecoration(
+
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LangTranslator()));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child:
+                    Container(
+                      decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(1.0, 2.0),
+                              color: Colors.deepOrange.shade50,
+                              blurRadius: 2.0,
+                            ),],
+                          borderRadius: BorderRadius.circular(10),
+                          color: allColors.appcontColor
+                      ),
+                      height: 50,
+                      width: 80,
+                      child: Center(
+                        child: Text(
+                          "অনুবাদ করুন",
+                          style: TextStyle(
+                            fontSize: 18,
+                              color: allColors.apptext,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Expanded(
@@ -191,21 +216,7 @@ class _HomePageState extends State<HomePage> {
                                       btnName: wordBtnList,
                                     ))):
                                 {
-                                  if(i == 1)
-                                    {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context)
-                                            => SentenceScreen(
-                                              title: btnName[1],
-                                              tempListBn: _airportConversation.bnAirportConversation,
-                                              tempListAr: _airportConversation.arAirportConversation,
-                                              tempListPr: _airportConversation.prAirportConversation,
-                                            )),
-                                      )
-                                    }
-                                  else if(i == 2)
+                                  if(i == 2)
                                     {
                                       Navigator.push(
                                         context,
@@ -213,6 +224,20 @@ class _HomePageState extends State<HomePage> {
                                             builder: (context)
                                             => SentenceScreen(
                                               title: btnName[2],
+                                              tempListBn: _airportConversation.bnAirportConversation,
+                                              tempListAr: _airportConversation.arAirportConversation,
+                                              tempListPr: _airportConversation.prAirportConversation,
+                                            )),
+                                      )
+                                    }
+                                  else if(i == 1)
+                                    {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context)
+                                            => SentenceScreen(
+                                              title: btnName[1],
                                               tempListBn: _necessary.bnNecessarySentense,
                                               tempListAr: _necessary.arNecessarySentense,
                                               tempListPr: _necessary.prNecessarySentense,
@@ -241,12 +266,21 @@ class _HomePageState extends State<HomePage> {
                                                 builder: (context)
                                                 => SentenceScreen(
                                                   title: btnName[4],
-                                                  tempListBn: _basarjinis_potro_posak.bnlistBasarjinisPotro,
-                                                  tempListAr: _basarjinis_potro_posak.arListBasarJinisPotro,
-                                                  tempListPr: _basarjinis_potro_posak.prlistBasarJinisPotro,
+                                                  tempListBn: _basarjinis_potro_posak.bnList,
+                                                  tempListAr: _basarjinis_potro_posak.arList,
+                                                  tempListPr: _basarjinis_potro_posak.prList,
                                                 )),
                                           )
                                         }
+                                      else if(i == 5)
+                                          {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context)
+                                                  => QuizPage()),
+                                            )
+                                          }
                                   ,
                                 };
                             },
@@ -291,6 +325,7 @@ class _HomePageState extends State<HomePage> {
                                           child: Text(
                                             btnName[i],
                                             style: TextStyle(
+                                              fontWeight: FontWeight.bold,
                                                 color: allColors.apptext),
                                           ),
                                         ),

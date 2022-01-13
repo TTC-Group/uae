@@ -1,5 +1,5 @@
 class Basarjinis_potro_posak {
-  List<String> bnlistBasarjinisPotro = [
+  List<String> bnList = [
     'আয়না',
         'চিরুনি',
         'বালিশ',
@@ -91,7 +91,7 @@ class Basarjinis_potro_posak {
         'সংবাদপত্র ',
         'এটার নাম কি'
   ];
-  List<String> arListBasarJinisPotro = [
+  List<String> arList = [
     'مرآة',
         'مشط',
         'وسادة',
@@ -183,7 +183,7 @@ class Basarjinis_potro_posak {
         'جريدة',
         'ما في الاسم؟'
   ];
-  List<String> prlistBasarJinisPotro = [
+  List<String> prList = [
     'মুআত্তাফ',
         'মিন্‌শাফাহ',
         'মিন্দিল',

@@ -1,5 +1,5 @@
 class NumberDayMonth{
-  List<String> bnNDMList=[
+  List<String> bnList=[
    "এক ",
    "দুই",
    "তিন",
@@ -56,7 +56,7 @@ class NumberDayMonth{
    'জমাদিউল আউয়াল',
    'জমাদিউস সানি'
   ];
-  List<String> arNDMList=[
+  List<String> arList=[
     "واحد",
         "اثنين",
         "ثلاثة",
@@ -113,7 +113,7 @@ class NumberDayMonth{
        'جمادى أول',
     "جاماديوس صني"
   ];
-  List<String> prNDMList=[
+  List<String> prList=[
   'ওয়াহেদ',
   'ইছনান ',
   'ছালাছা ',

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 class AllColors{
 Color appColor=Colors.black;
-Color appcontColor=Color(0xffff0000);
+Color appcontColor=Colors.teal.shade800;
 Color apptext=Colors.white;
-Color appbarColor=Color(0xffff0000);
+Color appBtnColor1=Colors.black;
+Color appbarColor=Colors.teal.shade800;
 Color appButtonColor=Colors.black;
 Color detailTextColor=Colors.black;
 Color wordShade=Colors.teal;
-Color normalTextColor=Colors.black;
-Color drawerColor=Colors.orangeAccent;
+Color normalTextColor=Colors.white;
+Color drawerColor=Colors.teal.shade500;
 static List <Color> categoryColor = [
   Colors.teal,
   Colors.teal.shade200,

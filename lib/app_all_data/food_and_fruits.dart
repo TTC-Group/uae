@@ -1,5 +1,5 @@
 class FoodAndFruits{
-  List<String> bnFoodAndFruits = [
+  List<String> bnList = [
     "ভাত,চাউল",
     "আটার রুটি",
     "আটা",
@@ -112,10 +112,10 @@ class FoodAndFruits{
     "লবনাক্ত",
     "স্বাদহীন"
   ];
-  List<String> arFoodAndFruits = [
+  List<String> arList = [
 
   ];
-  List<String> prFoodAndFruits = [
+  List<String> prList = [
     "রুজ",
     "খুবজ/খোবুছ",
     "দাক্কিক,হাব্বা",
