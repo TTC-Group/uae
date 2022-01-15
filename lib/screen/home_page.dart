@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uae/app_all_data/airport_conversation.dart';
@@ -58,6 +59,12 @@ List<String> wordBtnList = [
   "khabar o fol mul",
   "ranna ghorer jinishpotro",
   "sorirer ongo protongo"
+];
+List<String> textList=[
+  "যে ব্যাপারে তুমি সত্যিই বিশ্বাস করো , সে ব্যাপারে কখনো হাল ছেড়ো না , পথ তুমি খুঁজে পাবেই ।    - Roy T. Bennett",
+  "আমি ব্যর্থতাকে মেনে নিতে পারি , কিন্তু আমি চেষ্টা না করাকে মেনে নিতে পারি না।    - Michael Jordan",
+  "কখনো ভেঙে পড়ো না । পৃথিবীতে যা কিছু হারিয়ে যায় , অন্য কোন রূপে সেটি ঠিকই আবার ফিরে আসে জীবনে   - Rumi",
+  "সাফল্যের মূল মন্ত্র হল যা আমরা ভয় পাই তার উপর নয় বরং আমরা যা চাই তার উপর আমাদের চেতন মনকে কেন্দ্রীভূত করা    - Brian Tracy "
 ];
 class _HomePageState extends State<HomePage> {
   @override
@@ -134,18 +141,38 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: height * 0.15,
                 width: width,
-                child: Stack(
-                  children: [
-                    Container(
-                        decoration: BoxDecoration(
-                            color: allColors.appcontColor,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(36),
-                              bottomRight: Radius.circular(36),
-                            ))),
+                child: Container(
+                  child:
+                  CarouselSlider(
 
-                  ],
-                ),
+                    options: CarouselOptions(
+                      autoPlay: true,
+                      viewportFraction: 1.0,
+                      autoPlayInterval: Duration(seconds: 6)
+                    ),
+                    items: textList
+                        .map((item) => Container(
+                      child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                left:20,right: 20),
+                            child: Text(
+                                item.toString(),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold
+                            ),),
+                          )),
+                      //color: Colors.green,
+                    ))
+                        .toList(),
+                  ),
+                    decoration: BoxDecoration(
+                        color: allColors.appcontColor,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(36),
+                          bottomRight: Radius.circular(36),
+                        ))),
               ),
               SizedBox(
                 height: 15,

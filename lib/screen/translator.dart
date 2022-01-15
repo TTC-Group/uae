@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -115,76 +117,92 @@ class _LangTranslatorState extends State<LangTranslator> {
           child: Column(
               children: [
             Expanded(
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).selectedRowColor,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0,top: 10),
-                  child: Stack
-                    (
-                      children:[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 45.0,top: 10),
-                          child: Text(
-                            lastWords,
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 20
+              child: InkWell(
+                onLongPress: (){
+                  FlutterClipboard.copy(lastWords).then(( value ) {
+                    print('copied');
+                    Fluttertoast.showToast(msg: "Copied!");
+                  });
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  color: Theme.of(context).selectedRowColor,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0,top: 10),
+                    child: Stack
+                      (
+                        children:[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 45.0,top: 10),
+                            child: Text(
+                              lastWords,
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontSize: 20
+                              ),
                             ),
                           ),
-                        ),
-                        // Positioned(
-                        //     right: 0,
-                        //     top: 0,
-                        //     child: Icon(Icons.play_arrow)
-                        // ),
-                      ])
+                          // Positioned(
+                          //     right: 0,
+                          //     top: 0,
+                          //     child: Icon(Icons.play_arrow)
+                          // ),
+                        ])
+                  ),
                 ),
               ),
             ),
             Divider(),
             Expanded(
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                color: Theme.of(context).selectedRowColor,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0,top: 2),
-                  child:
-                    Stack
-                      (
-                        children:[
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 45.0,top: 10),
-                            child: Text(
-                            lastWords2,
-                            textAlign: TextAlign.right,
-                              style: TextStyle(
-                                  fontSize: 20
-                              ),
-                       ),
+              child: InkWell(
+                onLongPress: (){
+                  FlutterClipboard.copy(lastWords2).then(( value ) {
+                    print('copied');
+                    Fluttertoast.showToast(msg: "Copied!");
+                  });
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  color: Theme.of(context).selectedRowColor,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0,top: 2),
+                    child:
+                      Stack
+                        (
+                          children:[
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 45.0,top: 10),
+                              child: Text(
+                              lastWords2,
+                              textAlign: TextAlign.right,
+                                style: TextStyle(
+                                    fontSize: 20
+                                ),
+                         ),
+                            ),
                           ),
-                        ),
-                          Positioned(
-                              right: 0,
-                              top: 0,
-                              child: IconButton
-                                (
-                                 icon: Icon(
-                                   isSpeaking?
-                                   Icons.volume_down_sharp:
-                                   Icons.volume_up,
-                                   size: 30,
-                                   color: isSpeaking?
-                                   Colors.grey:
-                                   _allColor.appButtonColor,
-                                 ),
-                                onPressed: () {
-                                  isSpeaking?stop():speak();
-                                },)
-                          ),
-                    ])
+                            Positioned(
+                                right: 0,
+                                top: 0,
+                                child: IconButton
+                                  (
+                                   icon: Icon(
+                                     isSpeaking?
+                                     Icons.volume_down_sharp:
+                                     Icons.volume_up,
+                                     size: 30,
+                                     color: isSpeaking?
+                                     Colors.grey:
+                                     _allColor.appButtonColor,
+                                   ),
+                                  onPressed: () {
+                                    isSpeaking?stop():speak();
+                                  },)
+                            ),
+                      ])
+                  ),
                 ),
               ),
             ),
