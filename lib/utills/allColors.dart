@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 class AllColors{
 Color appColor=Colors.black;
-Color appcontColor=Colors.teal.shade800;
+Color appcontColor=Colors.orange.shade800;
 Color apptext=Colors.white;
 Color appBtnColor1=Colors.black;
-Color appbarColor=Colors.teal.shade800;
+Color appbarColor=Colors.orange.shade800;
 Color appButtonColor=Colors.black;
 Color detailTextColor=Colors.black;
 Color wordShade=Colors.teal;
