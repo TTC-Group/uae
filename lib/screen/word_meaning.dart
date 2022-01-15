@@ -17,7 +17,7 @@ class WordMeaning extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold (
       appBar: AppBar(
         backgroundColor: allColors.appcontColor,
         title: Text(title),
