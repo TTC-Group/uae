@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uae/screen/quiz_screen.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({Key? key}) : super(key: key);
@@ -59,11 +60,11 @@ class _QuizPageState extends State<QuizPage> {
 
               ),
               InkWell(onTap: (){
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder:
-                //       (context) => startquiz()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:
+                      (context) => startquiz()),
+                );
 
               },
                 child: Container(
