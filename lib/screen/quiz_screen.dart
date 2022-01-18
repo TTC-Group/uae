@@ -96,30 +96,33 @@ class _startquizState extends State<startquiz> {
                   itemBuilder: (context,index){
                 return Padding(
                   padding: const EdgeInsets.all(7.0),
-                  child: Container(height: height/12,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 2.0, color: Color(0xff252C4A)),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 22,left: 150),
-                      child: InkWell(
-                        onTap: (){
-                          setState(() {
-                            ansvisiblity = true;
-                            if(questionList[questionNbr].optionValueList[index]==1){
-                              optionColor[index]=Colors.green;
-                            }
-                            else{
-                              optionColor[index]=Colors.red;
-                            }
-                          });
-                        },
-                          child: Text(questionList[questionNbr].optionList[index],
-                            style: TextStyle(
-                                color: optionColor[index]),)),
+                  child: InkWell( child: InkWell(
+                  onTap: (){
+                  setState(() {
+                  ansvisiblity = true;
+                  if(questionList[questionNbr].optionValueList[index]==1){
+                  optionColor[index]=Colors.green;
+                  }
+                  else{
+                  optionColor[index]=Colors.red;
+                  }
+                  });
+                  },
+                    child: Container(height: height/12,
+
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(width: 2.0, color: Color(0xff252C4A)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 22,left: 150),
+                        child: Text(questionList[questionNbr].optionList[index],
+                              style: TextStyle(
+                                  color: optionColor[index]),),
+                      ),
                     ),
                   ),
+                )
                 );
               }),
             ),
