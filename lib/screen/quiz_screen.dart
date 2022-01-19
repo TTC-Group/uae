@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uae/model/quiz_model.dart';
 import 'package:uae/screen/Result.dart';
-
+int scoreCount=0;
 QuestionModel questionModel1 = QuestionModel(
     "'আপনার নাম কি' এর আরবি কি.?",
     ["আনা বিখারিন" ,"মা ইসমুকা?", "লেইশ", "ফাদাল"],
@@ -14,75 +14,75 @@ QuestionModel questionModel2 = QuestionModel(
 QuestionModel questionModel3 = QuestionModel(
     "আমার নাম হেনা?",
     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
+    [0,0,1,0]);
 QuestionModel questionModel4 = QuestionModel(
     "আপনি কেমন আছেন??",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+    ["কাইফা হলুক" ,"আনা বিখারিন", "লেইশ", "বাইত"],
     [1,0,0,0]);
 QuestionModel questionModel5 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+    "আমি ভালো আছি?",
+    ["আনা তাবান" ,"আমাআল বাইত", "জিয়তু মিন", "আনা বিখারিন"],
     [1,0,0,0]);
 QuestionModel questionModel6 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
+    "আপনি কি চান?",
+    ["ইলাল লেকা" ,"মাযা তুরিদু", "মিন আইনা ", "মা ইসমুকা"],
+    [0,1,0,0]);
 QuestionModel questionModel7 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
+    "শিখে নিবাে?",
+    ["ফাললান " ,"গুফরানান", "ইনতাজির মুদ্দাতান", "বিয়াল্লেম"],
+    [0,0,0,01]);
 QuestionModel questionModel8 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
+    "কী জন্য এসেছেন?",
+    ["আনা তাবান" ,"আনা বিখারিন", "লিমা জিয়তা", "বাইত"],
+    [0,0,1,0]);
 QuestionModel questionModel9 = QuestionModel(
     "আমার নাম হেনা?",
     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
     [1,0,0,0]);
 QuestionModel questionModel10 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel11 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel12 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel13 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel14 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel15 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel16 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel17 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel18 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel19 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
-QuestionModel questionModel20 = QuestionModel(
-    "আমার নাম হেনা?",
-    ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
-    [1,0,0,0]);
+    "ক্ষমা করবেন?",
+    ["আনা তাবান" ,"মাগফিরাতান", "কাইফাল হাল", "বাইত"],
+    [0,1,0,0]);
+// QuestionModel questionModel11 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel12 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel13 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel14 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel15 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel16 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel17 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel18 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel19 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
+// QuestionModel questionModel20 = QuestionModel(
+//     "আমার নাম হেনা?",
+//     ["আনা তাবান" ,"আনা বিখারিন", "ইসমি হেনা", "বাইত"],
+//     [1,0,0,0]);
 List<QuestionModel> questionList =[
   questionModel1,
   questionModel2,
@@ -94,16 +94,16 @@ List<QuestionModel> questionList =[
   questionModel8,
   questionModel9,
   questionModel10,
-  questionModel11,
-  questionModel12,
-  questionModel13,
-  questionModel14,
-  questionModel15,
-  questionModel15,
-  questionModel17,
-  questionModel18,
-  questionModel19,
-  questionModel20
+  // questionModel11,
+  // questionModel12,
+  // questionModel13,
+  // questionModel14,
+  // questionModel15,
+  // questionModel15,
+  // questionModel17,
+  // questionModel18,
+  // questionModel19,
+  // questionModel20
 ];
 int questionNbr=0;
 bool ansvisiblity = false;
@@ -149,7 +149,7 @@ class _startquizState extends State<startquiz> {
             Container(color: Color(0xff252C4A) ,
               child: Row(
                 children: [
-                  Text("Question 1 Out of 20",style: TextStyle(fontSize: 20,color: Colors.white),),
+                  Text("Question${questionNbr+1} 1 Out of ${questionList.length}",style: TextStyle(fontSize: 20,color: Colors.white),),
                   Spacer(),
                   Container(height: 40,
                       width: 70,
@@ -158,7 +158,7 @@ class _startquizState extends State<startquiz> {
                   ),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15,left: 10),
-                        child: Text("Score: 0",style: TextStyle(fontSize: 15,color: Colors.white)),
+                        child: Text("Score: ${scoreCount}",style: TextStyle(fontSize: 15,color: Colors.white)),
                       )),
                 ],
               ),
@@ -186,6 +186,7 @@ class _startquizState extends State<startquiz> {
                   setState(() {
                   ansvisiblity = true;
                   if(questionList[questionNbr].optionValueList[index]==1){
+                    scoreCount++;
                   optionColor[index]=Colors.green;
                   }
                   else{
@@ -226,11 +227,17 @@ class _startquizState extends State<startquiz> {
             ),
               child: ElevatedButton(onPressed: (){
                 setState(() {
-                  if(questionNbr<=20)
+                  if(questionNbr<10)
                   questionNbr++;
                   else
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Score()));
-                });
+                   {
+                     questionNbr=0;
+                     Navigator.push(context, MaterialPageRoute(
+                         builder: (context)=> ScoreView(
+                           totalScore: scoreCount,
+                         )));
+                   }
+                    });
                 initState();
 
               },
