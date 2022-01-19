@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uae/helper/quiz/quiz2.dart';
+import 'package:uae/helper/quiz/quiz3.dart';
 import 'package:uae/screen/quiz_screen.dart';
 
 class QuizPage extends StatefulWidget {
@@ -127,123 +129,144 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               SizedBox(height: 20,),
-              Container(
-                height: height/5,
-                width: width,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xff07BBFE),
-                      Color(0xff5471EC),
+              InkWell(onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:
+                      (context) => startquiz2()),
+                );
+
+              },
+
+                child: Container(
+                  height: height/5,
+                  width: width,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color(0xff07BBFE),
+                        Color(0xff5471EC),
+
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30,left: 12),
+                                child: CircleAvatar(
+                                    radius: 12,
+                                    backgroundColor: Colors.black12,
+                                    child: Icon(Icons.check,size: 20,)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("ধাপ দুই",style: TextStyle(fontSize: 15,color:Colors.white)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8,),
+                                child: Text("মধ্যম প্রশ্নোত্তর",style: TextStyle(fontSize: 25,color:Colors.white)),
+                              ),
+                            ],
+                          ),
+                          Column(
+
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 40),
+                                child: Image.asset('assets/iq.png',height: 80,width: 150,),
+                              ),
+
+                            ],
+                          )
+                        ],
+                      ),
+
+
 
                     ],
                   ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-
-                  children: [
-                    Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 30,left: 12),
-                              child: CircleAvatar(
-                                  radius: 12,
-                                  backgroundColor: Colors.black12,
-                                  child: Icon(Icons.check,size: 20,)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text("ধাপ দুই",style: TextStyle(fontSize: 15,color:Colors.white)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8,),
-                              child: Text("মধ্যম প্রশ্নোত্তর",style: TextStyle(fontSize: 25,color:Colors.white)),
-                            ),
-                          ],
-                        ),
-                        Column(
-
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 40),
-                              child: Image.asset('assets/iq.png',height: 80,width: 150,),
-                            ),
-
-                          ],
-                        )
-                      ],
-                    ),
-
-
-
-                  ],
                 ),
               ),
               SizedBox(height: 20,),
-              Container(
-                height: height/5,
-                width: width,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xffFBC2EA),
-                      Color(0xffA18ED0),
+              InkWell(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder:
+                        (context) => startquiz3()),
+                  );
+
+                },
+
+                child: Container(
+                  height: height/5,
+                  width: width,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color(0xffFBC2EA),
+                        Color(0xffA18ED0),
+
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30,left: 12),
+                                child: CircleAvatar(
+                                    radius: 12,
+                                    backgroundColor: Colors.black12,
+                                    child: Icon(Icons.check,size: 20,)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("ধাপ তিন",style: TextStyle(fontSize: 15,color:Colors.white)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8,),
+                                child: Text("কঠিন প্রশ্নোত্তর",style: TextStyle(fontSize: 25,color:Colors.white)),
+                              ),
+                            ],
+                          ),
+                          Column(
+
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 30),
+                                child: Image.asset('assets/iq.png',height: 80,width: 150,),
+                              ),
+
+                            ],
+                          )
+                        ],
+                      ),
+
+
 
                     ],
                   ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-
-                  children: [
-                    Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 30,left: 12),
-                              child: CircleAvatar(
-                                  radius: 12,
-                                  backgroundColor: Colors.black12,
-                                  child: Icon(Icons.check,size: 20,)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text("ধাপ তিন",style: TextStyle(fontSize: 15,color:Colors.white)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 8,),
-                              child: Text("কঠিন প্রশ্নোত্তর",style: TextStyle(fontSize: 25,color:Colors.white)),
-                            ),
-                          ],
-                        ),
-                        Column(
-
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 30),
-                              child: Image.asset('assets/iq.png',height: 80,width: 150,),
-                            ),
-
-                          ],
-                        )
-                      ],
-                    ),
-
-
-
-                  ],
                 ),
               ),
             ],
